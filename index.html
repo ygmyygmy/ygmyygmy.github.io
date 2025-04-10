@@ -305,13 +305,17 @@
     <script>
         var urlParams = new URLSearchParams(window.location.search);
         var encodedParam = urlParams.get('c');
+
+        console.log(btoa(encodedParam));
         var tureurl = atob(encodedParam);
-        if (tureurl.includes("http")) {
+        console.log(tureurl);
+        if (tureurl.includes("https")) {
             var square = document.getElementById("container");
             setTimeout(function () {
                 square.style.display = "none";
             }, 1500);
             var html = '<iframe class="content" οnlοad="bindMouseWhee(this)" src=' + tureurl + '></iframe>';
+            console.log(html);
             document.writeln(html);
             console.log(tureurl);
         } else {
